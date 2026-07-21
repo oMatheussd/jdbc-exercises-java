@@ -1,15 +1,10 @@
 # JDBC Exercises
 
-Repositório criado para registrar minha evolução nos estudos de JDBC com Java, seguindo o curso do professor Nélio Alves.
+Projeto desenvolvido durante os estudos de JDBC no curso de Java do professor Nélio Alves.
 
-Cada exercício é desenvolvido de forma incremental, praticando os principais recursos da API JDBC antes da implementação do padrão DAO.
+## Objetivo
 
-## Objetivos
-
-- Praticar a conexão com banco de dados utilizando JDBC.
-- Aprender a executar comandos SQL com Java.
-- Compreender o uso de `Connection`, `PreparedStatement`, `ResultSet` e transações.
-- Consolidar os conceitos antes da implementação do padrão DAO.
+Praticar as operações básicas de acesso a banco de dados utilizando JDBC e MySQL, implementando um sistema simples de gerenciamento de departamentos.
 
 ## Tecnologias
 
@@ -18,17 +13,15 @@ Cada exercício é desenvolvido de forma incremental, praticando os principais r
 - MySQL
 - Eclipse IDE
 
-## Exercícios
+## Funcionalidades
 
-| Nº | Exercício | Status |
-|----|-----------|--------|
-| 01 | Inserir um departamento e recuperar o ID gerado | ✅ |
-| 02 | Buscar departamento por ID | ✅ |
-| 03 | Atualizar um departamento | ✅ |
-| 04 | Excluir um departamento | ✅ |
-| 05 | ... | ⏳ |
+- ✅ Inserir departamento
+- ✅ Buscar departamento por ID
+- ✅ Atualizar departamento
+- ✅ Excluir departamento
+- ✅ Menu interativo no console
 
-## Estrutura do projeto
+## Estrutura
 
 ```
 src
@@ -40,6 +33,15 @@ src
     └── DbIntegrityException.java
 ```
 
-## Observações
+## Conceitos praticados
 
-Este repositório possui finalidade exclusivamente educacional e acompanha minha evolução no estudo de JDBC e integração entre Java e MySQL.
+- Conexão com banco de dados
+- PreparedStatement
+- ResultSet
+- executeQuery()
+- executeUpdate()
+- RETURN_GENERATED_KEYS
+- CRUD completo
+- Estrutura de menus
+- Organização do código em métodos
+- Tratamento de exceções
