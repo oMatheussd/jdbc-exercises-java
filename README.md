@@ -23,8 +23,8 @@ Cada exercício é desenvolvido de forma incremental, praticando os principais r
 | Nº | Exercício | Status |
 |----|-----------|--------|
 | 01 | Inserir um departamento e recuperar o ID gerado | ✅ |
-| 02 | Consultar um departamento pelo ID | ⏳ |
-| 03 | Atualizar um departamento | ⏳ |
+| 02 | Buscar departamento por ID | ✅ |
+| 03 | Atualizar um departamento | ✅ |
 | 04 | Excluir um departamento | ⏳ |
 | 05 | ... | ⏳ |
 
