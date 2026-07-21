@@ -25,7 +25,7 @@ Cada exercício é desenvolvido de forma incremental, praticando os principais r
 | 01 | Inserir um departamento e recuperar o ID gerado | ✅ |
 | 02 | Buscar departamento por ID | ✅ |
 | 03 | Atualizar um departamento | ✅ |
-| 04 | Excluir um departamento | ⏳ |
+| 04 | Excluir um departamento | ✅ |
 | 05 | ... | ⏳ |
 
 ## Estrutura do projeto
