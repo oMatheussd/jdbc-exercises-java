@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.Scanner;
 
 import db.DB;
@@ -14,38 +13,42 @@ public class Program {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-
+		
 		Connection conn = DB.getConnection();
 		PreparedStatement st = null;
 		ResultSet rs = null;
-
-		System.out.print("Nome do departamento: ");
-		String department = sc.nextLine();
-
+		
+		System.out.print("Digite o Id do departamento: ");
+		int id =sc.nextInt();
+		
 		try {
+			
 			st = conn.prepareStatement(
-
-					"INSERT INTO department (Name) VALUES (?) ", Statement.RETURN_GENERATED_KEYS);
-
-			st.setString(1, department);
-			int rowsAffected = st.executeUpdate();
-
-			if (rowsAffected > 0) {
-				rs = st.getGeneratedKeys();
-				if (rs.next()) {
-					int id = rs.getInt(1);
-					System.out.println("Done! Id = " + id);
-				}
+					
+					"SELECT * FROM department "
+					+ "WHERE id = ? ");
+			
+			st.setInt(1, id);
+			rs = st.executeQuery();
+			
+			if (rs.next()) {
+				System.out.println("Departamento encontrado!");
+				int departmentId = rs.getInt("Id");
+				System.out.println("Id: " + departmentId);
+				String name = rs.getString("Name");
+				System.out.println("Nome: " + name);
+			} else {
+				System.out.println("Departamento não encontrado!");
 			}
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			DB.closeConnection();
-			DB.closeStatement(st);
-			DB.closeResultSet(rs);
 		}
-
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		finally {
+			DB.closeResultSet(rs);
+			DB.closeStatement(st);
+			DB.closeConnection();
+		}
 		sc.close();
 	}
 }
